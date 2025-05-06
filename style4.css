@@ -1,0 +1,109 @@
+/* style4.css */
+
+/* Базовий скидання відступів для блочних елементів */
+body, header, nav, section, article, footer, ul, ol, table, div {
+  margin: 0;
+  padding: 0;
+}
+
+/* Основні стилі сторінки */
+body {
+  background-color: #FFF8DC;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  padding: 20px;
+}
+
+/* Блочні елементи */
+header, nav, section, article, footer, .video-container {
+  display: block;
+  margin-bottom: 1.5em;
+}
+
+/* Контекстний селектор: всі посилання всередині меню */
+nav.menu a {
+  color: #0066CC;
+  text-decoration: none;
+}
+nav.menu a:hover {
+  text-decoration: underline;
+}
+
+/* Дочірній селектор: безпосередній <ul> у .menu */
+nav.menu > ul.menu-list {
+  list-style: none;
+  display: flex;
+  gap: 1em;
+}
+
+/* Дочірній селектор: посилання у пункті меню */
+nav.menu > ul.menu-list > li.menu-item > a {
+  font-weight: bold;
+}
+
+/* Сусідній селектор: другий пункт меню, що йде після першого */
+.menu-item + .menu-item > a {
+  text-transform: uppercase;
+}
+
+/* Контекстний селектор: абзаци у секції intro */
+#home-page .intro p {
+  margin-bottom: 1em;
+}
+
+/* Декларація !important для підкресленого лід-абзацу */
+.intro p.lead {
+  font-size: 1.2em;
+  color: #B22222 !important;
+  margin-bottom: 0.5em;
+}
+
+/* Сусідній селектор: список рецептів, що йде відразу після вступного абзацу */
+.section-intro + .recipe-list {
+  padding-left: 1.5em;
+  list-style-type: circle;
+}
+
+/* Дочірній селектор: статті рецепту безпосередньо в секції рецептів */
+#recipes-section > article.recipe-detail {
+  border: 1px solid #CCC;
+  padding: 10px;
+  background-color: #FFF;
+  margin-top: 1em;
+}
+
+/* Блокові заголовки */
+.site-title, .section-title, .video-title {
+  font-family: 'Georgia', serif;
+  color: #B22222;
+  text-align: center;
+  margin-bottom: 0.5em;
+}
+
+/* Таблиці у секції галереї */
+#gallery-section > table#stats-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+#gallery-section > table#stats-table th,
+#gallery-section > table#stats-table td {
+  border: 1px solid #888;
+  padding: 0.5em;
+}
+#gallery-section > table#stats-table th {
+  background-color: #EEE;
+  text-align: center;
+}
+
+/* Сусідній селектор: контейнер з відео одразу після таблиці */
+#gallery-section > table#stats-table + .video-container {
+  margin-top: 1em;
+}
+
+/* Дочірній селектор: iframe всередині блока відео */
+.video-container > iframe.recipe-video {
+  width: 100%;
+  max-width: 560px;
+  height: 315px;
+  border: none;
+}
